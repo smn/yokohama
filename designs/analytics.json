@@ -1,0 +1,31 @@
+{
+	"_id": "_design/analytics",
+	"views": {
+		"operating_systems": {
+			"map": "function(doc) { emit(doc.os, 1) }",
+			"reduce": "function(keys, values, rereduce) { return sum(values); }"
+		},
+		"browsers": {
+		    "map": "function(doc) { emit(doc.browser, 1) }",
+		    "reduce": "function(keys, values, rereduce) { return sum(values); }"
+		},
+		"browsers_versions": {
+		    "map": "function(doc) { emit([doc.browser, doc.full_version], 1)}",
+		    "reduce": "function(keys, values, rereduce) { return sum(values)}"
+		},
+		"referrers": {
+		    "map": "function(doc) { emit(doc.referrer, 1)}",
+		    "reduce": "function(keys, values, rereduce) { return sum(values)}"
+		},
+		"google_keywords": {
+		    "map": "function(doc) { 
+		        referrer = doc.referrer;
+		        keyword = unescape(doc.referrer.replace('http://google.com/search?q=',''));
+		        emit(keyword, 1);
+		    }",
+		    "reduce": " function(keys, values, rereduce) {
+		        return sum(values)
+		    }"
+		}
+	}
+}

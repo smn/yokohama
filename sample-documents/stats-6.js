@@ -4,5 +4,5 @@
     "major_version" : 3,
     "full_version" : 3.6,
     "url" : "http://yal.vodacom.co.za/live",
-    "referrer" : "http://google.com/search?q=mobile%20awesomeness%ubuntu"
+    "referrer" : "http://google.com/search?q=mobile%20awesomeness%20ubuntu"
 }
