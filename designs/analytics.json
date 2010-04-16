@@ -26,6 +26,18 @@
 		    "reduce": " function(keys, values, rereduce) {
 		        return sum(values)
 		    }"
+		},
+		"hits_per_url": {
+		    "map": "function(doc) { emit(doc.url, 1) }",
+		    "reduce": "function(keys, values, rereduce) { return sum(values); }"
+		},
+		"hits_per_domain": {
+		    "map": "function(doc) {
+		        match = doc.url.match(RegExp('http://([^/]+).*'));
+		        log(match);
+		        emit(match[1], 1);
+		    } ",
+		    "reduce": "function(keys, values, rereduce) { return sum(values); }"
 		}
 	}
 }
