@@ -10,8 +10,9 @@ If you're interested, here's how to get started where I left off (make sure you'
  2. Run `./setup.sh` - this will:
     1. Create the database
     2. Post the files in `sample-documents` to it
-    3. Put the `analytics.json` design in the database in order to query 
+    3. Overwrite the `analytics.json` design in the database in order to query 
         the data
+    4. Upload files in `_attachments/*` as attachments to `_design/analytics`
  3. Go to Futon at `http://127.0.0.1:5984/_utils` and check the available data
  4. Check the views in the top-right drop down menu, there should be a list of 
     5 custom views under the "analytics" heading. They should return some 
@@ -26,3 +27,4 @@ Some things I've noticed
 * Coding javascript in JSON sucks, I now understand why couchapp exists.
 * Map/Reduce starts to make more sense after reading `http://labs.mudynamics.com/wp-content/uploads/2009/04/icouch.html`
 * CouchDB is hungry for diskspace. Compacting removes old revisions & all deleted documents. It reduced my db from 42 megs to 6 megs.
+* It'll stay confusing for quite a while.

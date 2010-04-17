@@ -42,6 +42,8 @@
     },
     "shows": {
         "operating_systems": "function(doc, req) { 
+            // this isn't working, I think I've probably got my head stuck
+            // up the wrong idea.
             return doc._attachments['summary.html'];
         }"
     }
