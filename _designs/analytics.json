@@ -41,6 +41,8 @@
         }
     },
     "shows": {
-        "operating_systems": "function(doc, req) { return '<h1>' + doc.browser + '</h1>'; }"
+        "operating_systems": "function(doc, req) { 
+            return doc._attachments['summary.html'];
+        }"
     }
 }
