@@ -4,4 +4,6 @@ echo "PUTTING DATABASE $COUCH_DB_NAME"
 echo "POSTING DATA FILES FROM ./sample-documents/*"
 ./upload-sample-documents.sh
 echo "PUTTING DESIGN FILE"
-./upload-design-file.sh analytics
+./upload-design-file.sh
+echo "PUTTING ATTACHMENTS"
+./upload-attachments.sh

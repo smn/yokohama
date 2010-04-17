@@ -1,6 +1,6 @@
 #!/bin/bash
 source config.source
-for file in $WORKING_DIR/sample-documents/*
+for FILE in $WORKING_DIR/sample-documents/*
 do
-    curl -X POST $COUCH_INSTANCE -d @$file
+    curl -X POST $COUCH_INSTANCE -d @$FILE
 done
